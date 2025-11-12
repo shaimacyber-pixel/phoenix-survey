@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استبيان مشروع Phoenix - الصحة النفسية الرقمية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Changa', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            direction: rtl; /* لضمان الاتجاه من اليمين لليسار */
+            text-align: right; /* لمحاذاة النص لليمين */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #6c5ce7; /* لون مميز كشريط علوي */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 120px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #6c5ce7;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #a29bfe;
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            color: #555;
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .question-section {
+            background-color: #f8faff;
+            border: 1px solid #e0e6ed;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .question-section h3 {
+            color: #6c5ce7;
+            font-size: 1.4em;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #a29bfe;
+            padding-bottom: 10px;
+        }
+
+        .question-block {
+            margin-bottom: 25px;
+            cursor: pointer; /* للإشارة إلى أن مربع السؤال قابل للتفاعل */
+            padding: 10px; /* لجعله سهل النقر */
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+
+        .question-block:hover {
+            background-color: #eef2f5; /* لتغيير لون الخلفية عند تمرير الماوس */
+        }
+
+        .question-block label {
+            display: block;
+            font-size: 1.1em;
+            color: #444;
+            margin-bottom: 10px;
+            font-weight: bold;
+            cursor: pointer; /* لضمان أن النقر على النص يوجه للمربع */
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            box-sizing: border-box; /* لضمان أن العرض يشمل الـ padding */
+            resize: vertical; /* للسماح بتغيير حجم مربع النص عموديًا */
+            min-height: 80px;
+            font-family: 'Changa', sans-serif; /* استخدام نفس الخط */
+        }
+
+        textarea:focus {
+            border-color: #6c5ce7;
+            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+            outline: none;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 15px 25px;
+            background-color: #6c5ce7;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 30px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #5b4ddf;
+            transform: translateY(-2px);
+        }
+
+        button[type="submit"]:active {
+            transform: translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #777;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>استبيان مشروع Phoenix</h1>
+            <h2>الصحة النفسية الرقمية</h2>
+            <p>
+                نحن فريق من طلبة الإعلام الآلي نعمل على تطوير تطبيق ذكي "Phoenix" يهدف إلى دعم توازنكم النفسي والرقمي.
+                مشاركتكم في هذا الاستبيان قيّمة جدًا لمساعدتنا على فهم احتياجاتكم لبناء تطبيق فعال.
+                جميع إجاباتكم ستكون سرية وتُستخدم لأغراض البحث والتطوير فقط.
+            </p>
+        </header>
+
+        <form id="surveyForm" action="https://getform.io/f/bllqmnob" method="POST"> 
+            <div class="question-section">
+                <h3>المحور الأول: علاقتك بالهاتف وتأثيره عليك</h3>
+                <div class="question-block">
+                    <label for="q1">1. هل هناك أوقات تشعر فيها أنك تستخدم هاتفك أكثر من اللازم، أو بطريقة تؤثر على نومك/دراستك/علاقاتك؟</label>
+                    <textarea id="q1" name="q1" rows="3" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+                <div class="question-block">
+                    <label for="q2">2. هل لاحظت يوماً أن استخدامك لبعض التطبيقات أو مواقع التواصل الاجتماعي يؤثر على مزاجك؟ (بالإيجاب أو السلب؟)</label>
+                    <textarea id="q2" name="q2" rows="3" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+                <div class="question-block">
+                    <label for="q3">3. هل تشعر أحياناً بالضغط، القلق، أو حتى الحزن بعد تصفح وسائل التواصل الاجتماعي لفترة طويلة؟</label>
+                    <textarea id="q3" name="q3" rows="3" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+                <div class="question-block">
+                    <label for="q4">4. هل شعرت يومًا بالإرهاق الرقمي؟ ما هو شعورك حينها؟</label>
+                    <textarea id="q4" name="q4" rows="3" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+                <div class="question-block">
+                    <label for="q5">5. ما هي العلامات التي تشعر بها في جسمك أو نفسيتك عندما تكون متوترًا أو قلقًا؟ (مثلاً، صعوبة في النوم، عصبية، عدم تركيز، تسارع دقات القلب...)</label>
+                    <textarea id="q5" name="q5" rows="3" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+                <div class="question-block">
+                    <label for="q6">6. هل تعتقد أن هاتفك يمكن أن يكون أداة لمساعدتك على ملاحظة هذه العلامات مبكرًا؟</label>
+                    <textarea id="q6" name="q6" rows="3" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <h3>المحور الثاني: احتياجات الدعم والوقاية</h3>
+                <div class="question-block">
+                    <label for="q7">7. عندما تشعر بالتوتر أو القلق، ما هي الأشياء التي تحاول فعلها للتخفيف من ذلك؟ (مثلاً، التحدث مع صديق، ممارسة الرياضة، مشاهدة شيء ممتع، الصلاة...)</label>
+                    <textarea id="q7" name="q7" rows="3" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+                <div class="question-block">
+                    <label for="q8">8. هل جربت أي تطبيقات للصحة النفسية من قبل؟ وماذا كان رأيك فيها؟ هل استفدت منها؟</label>
+                    <textarea id="q8" name="q8" rows="3" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+                <div class="question-block">
+                    <label for="q9a">9. إذا كان هناك تطبيق يمكنه مساعدتك في الحفاظ على صحتك النفسية وعلاقتك المتوازنة مع الهاتف، ما هي أهم الأشياء التي تتوقع أن يقدمها لك؟</label>
+                    <textarea id="q9a" name="q9a" rows="3" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+                <div class="question-block">
+                    <label for="q9b">10. كيف تتخيل أن هذا التطبيق قد يساعدك في حياتك اليومية؟</label>
+                    <textarea id="q9b" name="q9b" rows="3" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+                <div class="question-block">
+                    <label for="q10">11. هل تعتقد أن دمج النصائح المستوحاة من قيمنا الدينية أو الثقافية (مثل آيات قرآنية أو أدعية) يمكن أن يكون مفيدًا لك في لحظات التوتر أو القلق؟ وكيف تتخيل أن يتم ذلك؟</label>
+                    <textarea id="q10" name="q10" rows="3" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <h3>المحور الثالث: الألعاب والمكافآت (التلعيب)</h3>
+                <div class="question-block">
+                    <label for="q11">12. ما هي أنواع الألعاب التي تستمتع بها على الهاتف؟</label>
+                    <textarea id="q11" name="q11" rows="3" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+                <div class="question-block">
+                    <label for="q12">13. هل تعتقد أن لعب ألعاب بسيطة وهادئة (ليست تنافسية) يمكن أن يساعدك على الاسترخاء أو التركيز؟ وما نوع الألعاب التي تتخيلها؟</label>
+                    <textarea id="q12" name="q12" rows="3" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+                <div class="question-block">
+                    <label for="q13">14. إذا كان التطبيق يقدم لك مكافآت بسيطة (نقاط، ميداليات) عند تحقيق توازن في استخدام الهاتف أو ممارسة تمارين الاسترخاء، هل هذا سيحفزك؟</label>
+                    <textarea id="q13" name="q13" rows="3" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+            </div>
+
+            <button type="submit">إرسال الإجابات</button>
+        </form>
+
+        <footer>
+            <p>&copy; 2024 مشروع Phoenix. جميع الحقوق محفوظة.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // لجعل النقر على أي مكان في "question-block" يركز على مربع النص
+            document.querySelectorAll('.question-block').forEach(block => {
+                block.addEventListener('click', () => {
+                    const textarea = block.querySelector('textarea');
+                    if (textarea) {
+                        textarea.focus();
+                    }
+                });
+            });
+            // تم حذف كل الكود الخاص بـ surveyForm.addEventListener('submit', ...)
+            // المتصفح الآن سيتولى الإرسال مباشرة إلى Formspree
+        });
+    </script>
+</body>
+</html>
+```http://googleusercontent.com/image_generation_content/16
